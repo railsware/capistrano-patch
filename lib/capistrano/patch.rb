@@ -1,6 +1,6 @@
 require 'capistrano/patch/strategy'
 
-Capistrano::Configuration.instance.load do
+Capistrano::Configuration.instance(true).load do
 
   set(:patch_strategy) { Capistrano::Patch::Strategy.new(fetch(:patch_via, scm), self) }
 
